@@ -58,6 +58,20 @@ export const login = asyncHandler(async (req, res) => {
   }
 });
 
+export const getMe = asyncHandler(async (req, res) => {
+  try {
+    if (!req.user) return res.status(401).json({ message: "Not authorized" });
+    res.status(200).json({
+      _id: req.user._id,
+      name: req.user.name,
+      email: req.user.email,
+    });
+  } catch (error) {
+    console.log("Error in getMe:", error.message);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
 export const logout = (req, res) => {
   try {
     res.cookie("token", "", { maxAge: 0 });

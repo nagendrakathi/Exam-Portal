@@ -18,14 +18,15 @@ app.use(morgan("dev"));
 
 app.use(
   cors({
-    origin: "*",
-    methods: ["GET", "POST"],
+    origin: ["http://localhost:5173"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
   })
 );
 
 app.use("/api/auth", authRoutes);
-app.use("/api/exam", examRoutes)
+app.use("/api/exam", examRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

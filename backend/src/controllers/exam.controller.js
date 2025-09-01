@@ -160,3 +160,20 @@ export const getResult = asyncHandler(async (req, res) => {
     })),
   });
 });
+
+export const getSessions = asyncHandler(async (req, res) => {
+  const sessions = await Session.find({ user: req.user._id }).sort({
+    startedAt: -1,
+  });
+  res.json(
+    sessions.map((session) => ({
+      sessionId: session._id,
+      total: session.questions.length,
+      score: session.score,
+      startedAt: session.startedAt,
+      submittedAt: session.submittedAt,
+      durationMinutes: session.durationMinutes,
+      isOngoing: !session.submittedAt,
+    }))
+  );
+});
