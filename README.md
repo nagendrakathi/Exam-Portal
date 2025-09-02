@@ -348,5 +348,6 @@ Plain Text
 ```
 
 
-You can also visit the website here : https://quizmaster-vercel.app/
+You can also visit the website here : https://quiz-master.vercel.app/
+
 
