@@ -1,4 +1,7 @@
-## Backend
+
+# Full Stack Student Exam Portal
+
+ # Backend
 
 To create Backend Folder
 
@@ -37,7 +40,7 @@ To create Backend Folder
         ```
         PORT=8000
         NODE_ENV=development
-        MONGO_URI=mongodb://localhost:27017/exam-portal  (Install MongoDB locaally)
+        MONGO_URI=mongodb://localhost:27017/exam-portal  (Install MongoDB locally)
         JWT_SECRET={{Paste your JWT Seccrete Here}}
         EXAM_DURATION_MINUTES=30
         QUESTION_COUNT=30
@@ -343,4 +346,5 @@ Plain Text
 }
 
 ```
+
 
