@@ -135,7 +135,25 @@ export const submitExam = asyncHandler(async (req, res) => {
   });
 });
 
-export const getResult = asyncHandler(async (req, res) => {
+
+export const getSessions = asyncHandler(async (req, res) => {
+  const sessions = await Session.find({ user: req.user._id }).sort({
+    startedAt: -1,
+  });
+  res.json(
+    sessions.map((session) => ({
+      sessionId: session._id,
+      total: session.questions.length,
+      score: session.score,
+      startedAt: session.startedAt,
+      submittedAt: session.submittedAt,
+      durationMinutes: session.durationMinutes,
+      isOngoing: !session.submittedAt,
+    }))
+  );
+});
+
+export const getSession = asyncHandler(async (req, res) => {
   const { sessionId } = req.params;
   const session = await Session.findOne({
     _id: sessionId,
@@ -159,21 +177,4 @@ export const getResult = asyncHandler(async (req, res) => {
       isCorrect: q.selectedIndex === q.correctIndex,
     })),
   });
-});
-
-export const getSessions = asyncHandler(async (req, res) => {
-  const sessions = await Session.find({ user: req.user._id }).sort({
-    startedAt: -1,
-  });
-  res.json(
-    sessions.map((session) => ({
-      sessionId: session._id,
-      total: session.questions.length,
-      score: session.score,
-      startedAt: session.startedAt,
-      submittedAt: session.submittedAt,
-      durationMinutes: session.durationMinutes,
-      isOngoing: !session.submittedAt,
-    }))
-  );
 });

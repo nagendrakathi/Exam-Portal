@@ -13,7 +13,7 @@ createRoot(document.getElementById("root")).render(
       <AuthProvider>
         <ExamProvider>
           <App />
-          <Toaster position="top-right" />
+          <Toaster />
         </ExamProvider>
       </AuthProvider>
     </BrowserRouter>

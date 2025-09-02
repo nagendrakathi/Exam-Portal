@@ -4,16 +4,16 @@ import {
   startExam,
   updateAnswer,
   submitExam,
-  getResult,
   getSessions,
+  getSession,
 } from "../controllers/exam.controller.js";
 
 const router = Router();
 
 router.post("/start", protect, startExam);
+router.get("/my-sessions", protect, getSessions);
+router.get("/:sessionId", protect, getSession);
 router.patch("/:sessionId/answer", protect, updateAnswer);
 router.post("/:sessionId/submit", protect, submitExam);
-router.get("/:sessionId/result", protect, getResult);
-router.get("/mine", protect, getSessions);
 
 export default router;

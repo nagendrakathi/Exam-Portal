@@ -19,7 +19,7 @@ export default function AuthForm({ mode = "login", switchMode, close }) {
   };
 
   return (
-    <div>
+    <div className="flex flex-col mx-auto w-full max-w-sm">
       <h3 className="text-xl font-semibold mb-4">
         {mode === "login" ? "Login" : "Register"}
       </h3>
@@ -30,7 +30,7 @@ export default function AuthForm({ mode = "login", switchMode, close }) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Name"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border-2 border-gray-500/50 rounded-md text-sm"
           />
         )}
         <input
@@ -39,7 +39,7 @@ export default function AuthForm({ mode = "login", switchMode, close }) {
           onChange={(e) => setEmail(e.target.value)}
           type="email"
           placeholder="Email"
-          className="w-full p-2 border rounded"
+          className="w-full p-2  border-2 border-gray-500/50 rounded-md text-sm"
         />
         <input
           required
@@ -47,11 +47,11 @@ export default function AuthForm({ mode = "login", switchMode, close }) {
           onChange={(e) => setPassword(e.target.value)}
           type="password"
           placeholder="Password"
-          className="w-full p-2 border rounded"
+          className="w-full p-2  border-2 border-gray-500/50 rounded-md text-sm"
         />
         <div className="flex items-center justify-between">
           <button
-            className="px-4 py-2 bg-teal-600 text-white rounded"
+            className="px-4 py-2 bg-blue-600 text-white rounded cursor-pointer mt-6 text-sm"
             disabled={loading}
           >
             {loading
@@ -62,7 +62,7 @@ export default function AuthForm({ mode = "login", switchMode, close }) {
           </button>
           <button
             type="button"
-            className="text-sm text-slate-500"
+            className="text-sm text-gray-500 cursor-pointer text-center mt-6 underline" 
             onClick={() => switchMode(mode === "login" ? "register" : "login")}
           >
             {mode === "login" ? "Create account" : "Have account? Login"}

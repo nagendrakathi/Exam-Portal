@@ -24,7 +24,7 @@ export default function Timer({ startedAt, durationMinutes, onExpire }) {
   const ss = String(remaining % 60).padStart(2, "0");
 
   return (
-    <div className="timer-pill fixed top-4 right-4 z-50">
+    <div className="timer-pill text-sm sm:text-lg w-[80px] sm:w-[100px] text-center  flex items-center justify-center bg-white border border-slate-300 rounded-full shadow font-medium text-slate-700">
       {mm}:{ss}
     </div>
   );

@@ -10,7 +10,7 @@ export function AuthProvider({ children }) {
 
   const fetchUser = async () => {
     try {
-      const res = await api.get("/api/auth/me");
+      const res = await api.get("/api/auth/user");
       setUser(res.data);
     } catch {
       setUser(null);

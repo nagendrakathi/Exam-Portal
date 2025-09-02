@@ -1,7 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import "tailwindcss";
 
-/* minimal styles for timer pill etc */
-.fullscreen-wrapper { height: 100vh; display: flex; flex-direction: column; }
-.timer-pill { background: rgba(0,0,0,0.7); color: white; padding: 0.35rem 0.6rem; border-radius: 9999px; font-weight: 600; }
-.option-btn { transition: transform .08s; }
-.option-btn:active { transform: scale(.995); }
+* {
+
+    font-family: 'Inter', sans-serif;
+}
+
+.fullscreen-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.timer-pill {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.35rem 0.6rem;
+    border-radius: 9999px;
+    font-weight: 600;
+}
+
+.option-btn {
+    transition: transform .08s;
+}
+
+.option-btn:active {
+    transform: scale(.995);
+}

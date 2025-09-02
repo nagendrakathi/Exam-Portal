@@ -10,6 +10,7 @@ import { errorHandler, notFound } from "./middlewares/error.middleware.js";
 
 env.config();
 const app = express();
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
 
 app.use(express.json());
 app.use(cookieParser());
@@ -18,7 +19,7 @@ app.use(morgan("dev"));
 
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: [FRONTEND_URL],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
