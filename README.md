@@ -61,7 +61,8 @@ To create this folder
         - App.jsx — root component
         - main.jsx
     - package.json — frontend dependencies and scripts.
-    - Run this to ionstall necesary npms
+    - Run this to ionstall necesary npms \n
+    - 
     npm i tailwindcss @tailwindcss/vite axios lucide-react react-router-dom
         
         ```json
@@ -342,3 +343,4 @@ Plain Text
 }
 
 ```
+
