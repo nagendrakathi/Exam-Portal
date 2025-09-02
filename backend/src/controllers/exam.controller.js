@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import Question from "../models/question.model.js";
-import Session from "../models/session.model.js";
+import Question from "../models/Question.model.js";
+import Session from "../models/Session.model.js";
 import asyncHandler from "../utils/asyncHandler.js";
 
 //Picking random questions from the Questions databse
