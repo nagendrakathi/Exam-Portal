@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useExam } from "../context/ExamContext";
 import QuestionCard from "../components/QuestionCard";
-import Timer from "../components/Timer";
+import Timer from "../components/Timer.jsx";
 import { Loader } from "lucide-react";
 
 export default function Exam() {
