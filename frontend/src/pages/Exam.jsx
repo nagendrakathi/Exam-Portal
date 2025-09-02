@@ -1,4 +1,3 @@
-// src/pages/Exam.jsx
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useExam } from "../context/ExamContext";
